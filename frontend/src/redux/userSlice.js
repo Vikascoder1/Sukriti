@@ -40,27 +40,27 @@ const userSlice = createSlice({
     extraReducers: (builder) => {
         builder
             .addCase(fetchUsers.pending, (state) => {
-                state.loading = true; // Set loading state
+                state.loading = true; 
             })
             .addCase(fetchUsers.fulfilled, (state, action) => {
-                state.loading = false; // Clear loading state
-                state.users = action.payload; // Set users to fetched data
+                state.loading = false; 
+                state.users = action.payload;
             })
             .addCase(fetchUsers.rejected, (state, action) => {
-                state.loading = false; // Clear loading state
-                state.error = action.error.message; // Handle errors
+                state.loading = false; 
+                state.error = action.error.message; 
             })
             .addCase(addUser.fulfilled, (state, action) => {
-                state.users.push(action.payload); // Add new user to the state
+                state.users.push(action.payload); 
             })
             .addCase(updateUser.fulfilled, (state, action) => {
                 const index = state.users.findIndex((user) => user._id === action.payload._id);
                 if (index !== -1) {
-                    state.users[index] = action.payload; // Update user in state
+                    state.users[index] = action.payload; 
                 }
             })
             .addCase(deleteUser.fulfilled, (state, action) => {
-                state.users = state.users.filter((user) => user._id !== action.payload); // Remove deleted user
+                state.users = state.users.filter((user) => user._id !== action.payload); 
             });
     },
 });
