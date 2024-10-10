@@ -12,17 +12,17 @@ const Login = () => {
         try {
             const response = await axios.post('http://localhost:5000/api/login', { email, password });
             if (response.status === 200) {
-                alert('Login Successful!'); // Show alert on successful login
-                navigate('/home'); // Navigate to home after successful login
+                alert('Login Successful!'); 
+                navigate('/home');
             }
         } catch (error) {
             console.error("There was an error logging in!", error);
-            alert('Login failed. Please check your credentials and try again.'); // Show alert on failure
+            alert('Login failed. Please check your credentials and try again.'); 
         }
     };
 
     const handleRegisterRedirect = () => {
-        navigate('/register'); // Redirect to registration page
+        navigate('/register'); 
     };
 
     return (

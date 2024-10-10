@@ -66,7 +66,7 @@
 
 // export default Home;
 
-// src/pages/Home.js
+
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchUsers, deleteUser } from '../redux/userSlice';
@@ -83,12 +83,12 @@ const Home = () => {
 
     const handleDelete = (id) => {
         if (window.confirm('Are you sure you want to delete this user?')) {
-            dispatch(deleteUser(id)); // Dispatch delete action
+            dispatch(deleteUser(id)); 
         }
     };
 
     const handleEdit = (user) => {
-        navigate(`/edit/${user._id}`, { state: user }); // Navigate to edit page
+        navigate(`/edit/${user._id}`, { state: user }); 
     };
 
     return (

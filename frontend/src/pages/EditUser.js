@@ -1,8 +1,8 @@
-// src/pages/EditUser.js
+
 import React, {  useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { updateUser } from '../redux/userSlice'; // Assume you create this action
+import { updateUser } from '../redux/userSlice'; 
 
 const EditUser = () => {
     const dispatch = useDispatch();
@@ -18,8 +18,8 @@ const EditUser = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const updatedUser = { ...user, name, email, phone, role };
-        dispatch(updateUser(updatedUser)); // Dispatch update action
-        navigate('/'); // Redirect to home page
+        dispatch(updateUser(updatedUser)); 
+        navigate('/'); 
     };
 
     return (
